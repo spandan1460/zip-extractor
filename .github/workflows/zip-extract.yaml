@@ -16,7 +16,6 @@ jobs:
 
             - name: Unzip the file
               run: |
-                rm -r test/extracted
                 filename=$(basename -s .zip *.zip)
                 unzip *.zip
                 rm *.zip
