@@ -15,15 +15,16 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Unzip the file
+              working-directory: test
               run: |
                 filename=$(basename -s .zip *.zip)
                 unzip *.zip
                 rm *.zip
                 mv $filename temp
-                mv temp/out/* .
+                mv temp/out/* ../
                 rm -r temp
                 git config --local user.email "github-actions@users.noreply.github.com"
                 git config --local user.name "github-actions"
-                git add .
+                git add ../
                 git commit -m "unzip $filename"
                 git push origin main
