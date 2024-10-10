@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fbm-template
+  namespace: fbm-template
+spec:
+  selector:
+    matchLabels:
+      app: fbm-template
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fbm-template
+    spec:
+      containers:
+        - name: fbm-template-pod
+          image: ghcr.io/maersk-global/fbm-template:latest
+          ports:
+            - containerPort: 8000
