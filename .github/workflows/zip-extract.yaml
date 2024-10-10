@@ -2,7 +2,7 @@ name: Extract a Zip File
 on:
     push:
         paths:
-            - 'unzip/**.zip'
+            - 'your-artifact/**.zip'
     workflow_dispatch:
 
 jobs:
