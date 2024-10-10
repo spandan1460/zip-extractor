@@ -14,6 +14,9 @@ jobs:
             - name: Checkout the repository
               uses: actions/checkout@v4
 
+            - name: Print Environment Variables
+              run: printenv
+
             - name: Unzip the file
               working-directory: test
               run: |
