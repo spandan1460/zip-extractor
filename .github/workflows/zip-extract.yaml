@@ -27,4 +27,4 @@ jobs:
                 git config --local user.name "github-actions"
                 git add ../
                 git commit -m "unzip $filename"
-                git push origin main
+                git push --set-upstream origin main
