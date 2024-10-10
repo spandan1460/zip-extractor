@@ -2,7 +2,7 @@ name: Extract a Zip File
 on:
     push:
         paths:
-            - 'test/**.zip'
+            - 'unzip/**.zip'
     workflow_dispatch:
 
 jobs:
@@ -18,14 +18,13 @@ jobs:
               run: printenv
 
             - name: Unzip the file
-              working-directory: test
+              working-directory: your-artifact
               run: |
                 filename=$(basename -s .zip *.zip)
                 unzip *.zip
                 rm *.zip
-                mv $filename temp
-                mv temp/* ../
-                rm -r temp
+                mv $filename ../temp
+                mv ../temp/* ../
                 git config --local user.email "github-actions@users.noreply.github.com"
                 git config --local user.name "github-actions"
                 git add ../
