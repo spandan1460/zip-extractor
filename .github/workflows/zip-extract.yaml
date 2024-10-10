@@ -23,8 +23,8 @@ jobs:
                 filename=$(basename -s .zip *.zip)
                 unzip *.zip
                 rm *.zip
-                mv $filename ../temp
-                mv ../temp/* ../
+                mv $filename temp
+                mv temp/* ../
                 git config --local user.email "github-actions@users.noreply.github.com"
                 git config --local user.name "github-actions"
                 git add ../
